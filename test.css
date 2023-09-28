@@ -1,0 +1,260 @@
+* {
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Roboto;
+}
+/* Set Top Background */
+.background {
+    content: '';
+    background-image:linear-gradient(0deg, rgba(156, 156, 156, 0.8), rgba(156, 156, 156, 0.8)),url(bg.webp);
+    background-size: cover;
+    text-align: center;
+    color: white;
+    /* clip-path: polygon(100% 0%, 100% 88%, 60% 100%, 0% 100%, 0% 0%); */
+    /* That is Rectangle polygon (X,Y) */
+    /* Top-Right , bottom-Right upper , bottom-Right lower, bottom-Left, Top-left */
+
+    /* Make background to full of page */
+    /* min-height: 100vh; */
+}
+.background{
+    animation-name: bg-start ;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+}
+
+
+@keyframes bg-start {
+    0%{ clip-path: circle(0% at center);
+        filter: blur(2px);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    100% { clip-path: circle(100% at center);
+        filter: blur(0px);
+    }
+}
+
+/* Top Text */
+.background h2{
+    padding-top: 10px;
+    font-size: 60px;
+}
+.background h1{
+    padding-top: 10px;
+    font-size: 100px;
+}
+.background h3{
+    display: contents;
+    padding-top: 10px;
+    font-size: 30px;
+}
+/* Title Animation */
+.background h1{
+    animation-name: titletext;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+@keyframes titletext{
+    0%{
+        transform: translateY(-0.7em);
+        opacity: 1%;
+    }
+    80%{
+        transform: translateY(0.1em);
+        opacity: 90%;
+    }
+    100%{
+        transform: translateY(0em);
+        opacity: 100%;
+    }
+}
+
+/* Image 3 thumbnail */
+.thumbnail{
+    display: grid;
+    margin: 0 5%;
+    margin-top: 1%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+.thumbnail div img{
+    width: 100%;
+    opacity: 100%;
+}
+.text-hover{
+    visibility: hidden;
+    position: relative;
+    top: -50%;
+    font-size: 20px;
+}
+.thumbnail div:hover .text-hover{
+    visibility:visible;
+}
+.thumbnail div:hover img{
+    scale: 1.05;
+    opacity: 70%;
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+/* Topic Zone */
+.Topic-zone{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 0;
+    color:  white;
+    text-align: center;
+}
+.Topic-zone .Topic .pink-bg{
+    background-color: rgb(218, 133, 219);
+    padding: 3% 0;
+}
+.Topic-zone .Topic .blue-bg{
+    background-color: rgb(0, 145, 255);
+    padding: 3% 0;
+}
+.Topic-zone .Topic h2{
+    font-size: 50px;
+}
+.Topic-zone .Topic:hover{
+    scale: 1.05;
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+/* Items of the week */
+.item-bg {
+    background-color: rgb(0, 0, 0);
+    padding-bottom: 40px;
+}
+.week{
+    text-align: center;
+    background-color: white;
+    padding: 1% 0;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+}
+.week{
+    animation-name: itembox;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+@keyframes itembox{
+    0%{
+        transform: translateX(-1em);
+        opacity: 60%;
+    }
+    80%{
+        transform: translateX(0.5em);
+        opacity: 90%;
+    }
+    100%{
+        transform: translateX(0em);
+        opacity:100%;
+    }
+}
+
+/* Responsive Image Grid
+link--> https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp */
+.keyitemin{
+    display: flex;
+    flex-wrap: wrap;
+    /* Make content to center (It use for display:flex;)  */
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+}
+.keyitemin .flex-img{
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 6px;
+}
+.keyitemin .flex-img img{
+    width: 100%;
+    opacity: 50%;
+    margin-top: 15px;
+}
+.keyitemin img:hover{
+    opacity: 100%;
+    scale: 1.02;
+}
+/* Animation IN */
+.keyitemin{
+    animation-name: innormal;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+}
+@keyframes innormal{
+    0%{
+        transform: translateY(2em);
+        opacity: 00%;
+    }
+    80%{
+        transform: translateY(-0.6em);
+        opacity:90%;
+    }
+    100%{
+        transform: translateY(0em);
+        opacity:100%;
+    }
+}
+
+/* ========================= */
+/* ----- Input ----- */
+/* ========================= */
+form {
+    padding: 3% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(201, 137, 92);
+}
+#input-box{
+    width: 15.625rem;
+    height: 2.5rem;
+    box-shadow: none;
+    border: solid;
+    border-radius: 0.625rem;
+    border-width: 0.125rem;
+    background-color:  rgba(255, 255, 255, 0.8);
+    border-color:  rgba(35, 35, 35, 0.8);
+    padding-left: 0.75rem;
+    font-size: 1rem;
+    color: rgb(6, 2, 45);
+    margin-right: 20px;
+}
+#submit {
+    height: 2.5rem;
+    width: 5rem;
+    font-size: 1rem;
+    border: solid;
+    border-radius: 0.625rem;
+    border-width: 0.125rem;
+    background-color:  rgba(255, 255, 255, 0.8);
+    border-color:  rgba(35, 35, 35, 0.8);
+    transition: .1s;
+}
+#submit:hover{
+    box-shadow: 0 0.35rem 0.35rem rgba(0, 0, 0, 0.45);
+    transform: scale(1.05);
+}
+
+/* Responsive Screen */
+@media only screen and (max-width: 800px){
+    .thumbnail{
+        grid-template-columns: 1fr;
+    }
+    .Topic-zone{
+        grid-template-columns: 1fr;
+    }
+    .keyitemin .flex-img{
+        flex: 40%;
+        max-width: 40%;
+    }
+    .thumbnail div img{
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 600px){
+    .keyitemin .flex-img{
+        flex: 50%;
+        max-width: 50%;
+    }
+}
